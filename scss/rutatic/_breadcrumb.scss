@@ -44,7 +44,7 @@
             font-size: 14px;
             color: #12202a;
             position: relative;
-            padding: .4em .8em .4em 1.5em;
+            padding: .4em .8em;
             background: #fff;
             border: 3px solid #44c5d0;
             border-radius: 20px;
@@ -106,12 +106,5 @@
             display: none;
         }
 
-        @-moz-document url-prefix() {
-            .breadcrumb li::after,
-            .breadcrumb li > *::after {
-                /* fix a bug on Firefix - tooth edge on css triangle */
-                border-left-style: dashed;
-            }
-        }
     }
 }
