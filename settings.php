@@ -145,7 +145,7 @@ if (is_siteadmin()) {
         $name = 'theme_rutatic/sliderorder' . $sliderindex;
         $title = get_string('sliderorder', 'theme_rutatic');
         $description = get_string('sliderorder_desc', 'theme_rutatic');
-        $default = $sliderindex;
+        $default = 0;
         $setting = new admin_setting_configselect($name, $title, $description, $default, $orderoptions);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $page->add($setting);
@@ -186,7 +186,7 @@ if (is_siteadmin()) {
         $name = 'theme_rutatic/newsorder' . $newsindex;
         $title = get_string('newsorder', 'theme_rutatic');
         $description = get_string('newsorder_desc', 'theme_rutatic');
-        $default = $newsindex;
+        $default = 0;
         $setting = new admin_setting_configselect($name, $title, $description, $default, $orderoptions);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $page->add($setting);
@@ -254,7 +254,7 @@ if (is_siteadmin()) {
         $name = 'theme_rutatic/logosorder' . $logosindex;
         $title = get_string('logosorder', 'theme_rutatic');
         $description = get_string('logosorder_desc', 'theme_rutatic');
-        $default = $logosindex;
+        $default = 0;
         $setting = new admin_setting_configselect($name, $title, $description, $default, $orderoptions);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $page->add($setting);
@@ -295,7 +295,7 @@ if (is_siteadmin()) {
         $name = 'theme_rutatic/statsorder' . $statsindex;
         $title = get_string('statsorder', 'theme_rutatic');
         $description = get_string('statsorder_desc', 'theme_rutatic');
-        $default = $statsindex;
+        $default = 0;
         $setting = new admin_setting_configselect($name, $title, $description, $default, $orderoptions);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $page->add($setting);
