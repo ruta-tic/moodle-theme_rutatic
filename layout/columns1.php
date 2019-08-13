@@ -33,5 +33,6 @@ $templatecontext = [
 $themesettings = new \theme_rutatic\util\theme_settings();
 $templatecontext = array_merge($templatecontext, $themesettings->generalvars());
 
+$OUTPUT->doctype(); // Call to fix Doctype loading error in some pages with columns2 layout.
 echo $OUTPUT->render_from_template('theme_rutatic/columns1', $templatecontext);
 

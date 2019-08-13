@@ -118,4 +118,5 @@ if (property_exists($USER, 'profile') && is_array($USER->profile) && array_key_e
 }
 $templatecontext['profileclass'] = $profile_class;
 
+$OUTPUT->doctype(); // Call to fix Doctype loading error in some pages with columns2 layout.
 echo $OUTPUT->render_from_template('theme_rutatic/mydashboard', $templatecontext);

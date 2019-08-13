@@ -80,6 +80,7 @@ if (isloggedin() && !isguestuser()) {
         $themesettings->slideshow(), $themesettings->socialnet_items(), $themesettings->logos_items(),
         $themesettings->stats_items(), $themesettings->generalvars());
 
+    $OUTPUT->doctype(); // Call to fix Doctype loading error in some pages with columns2 layout.
     echo $OUTPUT->render_from_template('theme_rutatic/frontpage', $templatecontext);
 } else {
     $extraclasses[] = 'slideshow';
@@ -101,5 +102,6 @@ if (isloggedin() && !isguestuser()) {
         $themesettings->slideshow(), $themesettings->socialnet_items(), $themesettings->logos_items(),
         $themesettings->stats_items(), $themesettings->generalvars());
 
+    $OUTPUT->doctype(); // Call to fix Doctype loading error in some pages with columns2 layout.
     echo $OUTPUT->render_from_template('theme_rutatic/frontpage_guest', $templatecontext);
 }
