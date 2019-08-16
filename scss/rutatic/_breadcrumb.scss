@@ -29,7 +29,7 @@
 
                 .no-link {
                     border-color: #7c8f8c;
-                    border-radius: 20px;
+                    border-radius: 5px;
                 }
             }
         }
@@ -47,7 +47,7 @@
             padding: .4em .8em;
             background: #fff;
             border: 3px solid #44c5d0;
-            border-radius: 20px;
+            border-radius: 5px;
         }
         .no-touch .breadcrumb a:hover {
             /* steps already visited */
@@ -72,7 +72,7 @@
             color: #fff;
             background-color: #96c03d;
             border-color: #96c03d;
-            border-radius: 20px;
+            border-radius: 5px;
         }
 
         .breadcrumb li:first-of-type > * {
