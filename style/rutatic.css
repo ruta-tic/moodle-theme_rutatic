@@ -224,6 +224,10 @@
     justify-content: center;
 }
 
+.eva-resourcebutton .eva-rb-name.longname a {
+    line-height: 17px;
+}
+
 .eva-resourcebutton img.activityicon,
 .eva-resourcebutton .autocompletion,
 .eva-resourcebutton .togglecompletion {
