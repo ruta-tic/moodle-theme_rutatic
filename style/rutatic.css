@@ -22,3 +22,550 @@
  *
  */
 
+.format-site.admin #region-main {
+    background-color: transparent;
+}
+
+.path-course.pagelayout-course #sidepost-blocks {
+    background-color: #fff;
+    margin-top: 10px;
+}
+
+.eva-topic-description {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #efefef;
+}
+
+.eva-topic-details {
+    border-top: 1px solid #b6b9bd;
+    padding-top: 20px;
+    display: flex;
+}
+
+.eva-topic-details > div {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.eva-topic-details > div:nth-child(2) {
+    border-left: 1px solid #b6b9bd;
+    margin-left: 5px;
+    padding-left: 5px;
+}
+
+.eva-topic-dates {
+    padding-left: 75px;
+    background: url([[pix:theme|fechas]]) no-repeat left center;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+.eva-topic-dates p {
+    margin: 0;
+}
+
+.eva-infocategory .eva-titleicon:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    font-style: normal;
+}
+
+.eva-generalsection hr,
+.eva-topicsection hr {
+    box-shadow: unset;
+    border: 1px solid #ccc;
+    height: auto;
+    margin: 30px 0 60px;
+    position: relative;
+}
+
+.eva-generalsection hr:after,
+.eva-topicsection hr:after {
+    content: "";
+    background-color: transparent;
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: -21px;
+    left: calc(50% - 20px);
+    border: 20px solid #ccc;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    transform: rotate(-45deg);
+}
+
+.eva-resourcebutton {
+    width: 207px;
+    margin: 10px 0;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    font-size: 15px;
+}
+
+.eva-resourcebutton a,
+.eva-resourcebutton a:hover {
+    text-decoration: none;
+}
+
+.eva-resourcebutton .eva-rb-name {
+    background-color: #dddddd;
+    border: 3px solid #73c8d1;
+    border-radius: 10px;
+    position: relative;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+    box-shadow: 1px 4px 7px #333;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 40px;
+    padding-right: 5px;
+}
+
+.eva-resourcebutton .eva-rb-name:before {
+    content: "";
+    font-family: "FontAwesome";
+    font-style: normal;
+    font-size: 123px !important;
+    color: #73c8d1;
+    position: absolute;
+    left: -1px;
+    line-height: 10px;
+    top: calc(50% - 3px);
+}
+
+.eva-resourcebutton .eva-rb-name:hover,
+.eva-resourcebutton .eva-rb-name:focus,
+.eva-resourcebutton .eva-rb-name:active {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+}
+
+.eva-resourcebutton .eva-rb-name a:before {
+    font-family:"FontAwesome";
+    position: absolute;
+    color: #fff;
+    left: 0;
+    top: calc(50% - 10px);
+    font-size: 25px;
+    line-height: 20px;
+}
+
+.eva-resourcebutton.eva-rb-forum .eva-rb-name a:before {
+    content: "";
+}
+
+.eva-resourcebutton.eva-rb-assign .eva-rb-name a:before {
+    content: "";
+}
+
+.eva-resourcebutton.eva-rb-content .eva-rb-name a:before {
+    content: "";
+}
+
+.eva-resourcebutton.eva-rb-db .eva-rb-name a:before {
+    content: "";
+}
+
+.eva-resourcebutton.eva-rb-work .eva-rb-name a:before {
+    content: "";
+}
+
+.eva-resourcebutton.eva-rb-survey .eva-rb-name a:before {
+    content: "";
+}
+
+.eva-resourcebutton.eva-rb-glossary .eva-rb-name a:before {
+    content: "";
+}
+
+.eva-resourcebutton.eva-rb-chat .eva-rb-name a:before {
+    content: "";
+}
+
+.eva-resourcebutton.eva-rb-wiki .eva-rb-name a:before {
+    content: "✍";
+}
+
+.eva-resourcebutton.eva-rb-grade .eva-rb-name a:before {
+    content: "✔";
+}
+
+.eva-resourcebutton.eva-rb-scorm .eva-rb-name a:before {
+    content: "";
+}
+
+.eva-resourcebutton .eva-rb-name a {
+    display: flex;
+    color: #000;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+    padding-left: 40px;
+    justify-content: center;
+}
+
+.eva-resourcebutton img.activityicon,
+.eva-resourcebutton .autocompletion,
+.eva-resourcebutton .togglecompletion {
+    display: none;
+}
+
+.eva-resourcebutton .eva-rb-type {
+    border: 1px solid #000;
+}
+
+.eva-resourcebutton.complete:after {
+    content: "";
+    font-family: "FontAwesome";
+    color: #fff;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 25px;
+    line-height: 20px;
+}
+
+.eva-resourcebutton.active .eva-rb-name,
+.eva-resourcebutton.complete .eva-rb-name {
+    background-color: #8ad2d9;
+    border-color: #8ad2d9;
+}
+
+.eva-resourcebutton.complete .eva-rb-type {
+    background-color: #74c863;
+}
+
+.eva-resourcebutton .completiontag .dimmed.dimmed_text:after {
+    content: "";
+    font-family: "FontAwesome";
+    position: absolute;
+    color: #8c8c8c;
+    left: calc(50% - 10px);
+    top: calc(50% - 10px);
+    font-size: 65px;
+    line-height: 20px;
+    opacity: 0.4;
+}
+
+/************************************************************************************/
+/* TOPICS
+/************************************************************************************/
+.eva-topic-description .eva-infocategory {
+    border-right: solid #fff 5px;
+    border-left: solid #fff 5px;
+    padding: 30px;
+}
+
+.eva-topic-description .eva-infocategory:first-child,
+.eva-topic-description .eva-infocategory:last-child {
+    border: none;
+}
+
+.eva-topic-description .eva-infocategory:nth-child(2) {
+    border-left: 10px solid #fff;
+}
+
+#page-content #region-main .eva-topic-description .eva-infocategory h2 {
+    font-size: 27px;
+    color: #000 !important;
+    font-weight: normal;
+    text-align: left;
+}
+
+.eva-topic-description .eva-infocategory h2 strong {
+    font-size: 27px;
+    text-transform: uppercase;
+    color: #d99830;
+    font-weight: 700;
+}
+
+.eva-phase {
+    border: solid #B3B3B3 1px;
+    background-color: #f2f2f2;
+    margin-top: 90px;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+.eva-phase-head {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-top: -55px;
+    float: left;
+}
+
+.eva-collapse i {
+    font-family: "FontAwesome";
+    font-style: normal;
+    font-size: 28px !important;
+    color: #666666;
+}
+
+.eva-phase-name {
+    font-size: 28px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-left: 20px;
+    background: var(--first-bg-url) no-repeat;
+    background-size: cover;
+    padding: 6px 20px;
+    background-position: center top;
+    min-width: 320px;
+}
+
+.eva-phase-body {
+    border-top: solid #e6e6e6 10px;
+    padding: 20px;
+}
+
+.eva-phase.eva-collapsed .eva-phase-body {
+    display: none;
+}
+
+.eva-phase-steps {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.eva-phase-step {
+    width: 230px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    color: #323232;
+    padding: 0 10px;
+    margin-right: 40px;
+}
+
+.eva-phase-head .fa-plus-circle {
+    display: none;
+}
+
+.eva-collapsed .fa-plus-circle {
+    display: unset;
+}
+
+.eva-collapse:before {
+    content: "";
+    font-family: "FontAwesome";
+    font-style: normal;
+    font-size: 28px !important;
+    color: #666666;
+}
+
+.eva-collapsed .eva-collapse:before {
+    content: "";
+}
+
+.eva-collapsed .fa-minus-circle {
+    display: none;
+}
+
+.eva-resourcebutton .completiontag > form.togglecompletion {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+#page-course-view-onetopic #completionprogressid {
+    display: none;
+}
+
+/************************************************************************************/
+/* COMPLETION
+/************************************************************************************/
+.block_completion_progress .progressBarCell {
+    height: 65px;
+}
+
+.block_completion_progress .progressEventInfo,
+.block_completion_progress .progressPercentage {
+    font-size: 13px;
+}
+
+.block_completion_progress .progressEventInfo .iconInInfo {
+    display: none;
+}
+
+.block_completion_progress .progressBarCell[data-idnumber^="End"] {
+    background: url([[pix:theme|icon_lock]]) no-repeat center center;
+    background-size: 90%;
+}
+
+.block_completion_progress .progressBarCell[data-idnumber^="End"][style*="#73A839"] {
+    background-image: url([[pix:theme|icon_unlock]]);
+}
+
+/********************************************************************************/
+/* Float window
+/********************************************************************************/
+.tepuy-wf {
+    position: absolute;
+    padding: 10px 15px;
+    background-color: #EAEAEA;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #bbb;
+}
+
+.tepuy-wf.tepuy-autox {
+    left: 10px;
+    right: 10px;
+    overflow: auto;
+}
+
+.tepuy-wf.tepuy-autoy {
+    top: 10px;
+    bottom: 10px;
+    overflow: auto;
+}
+
+.moodle-dialogue-bd .tepuy-body {
+    overflow: auto;
+}
+
+.tepuy-wf.tepuy-autox .tepuy-body, .tepuy-wf.tepuy-autoy .tepuy-body {
+    overflow: auto;
+    top: 20px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    position: absolute;
+}
+
+.tepuy-wf .tepuy-close {
+    position: absolute;
+    background-color: #5a9faf;
+    border-radius: 5px;
+    border: 2px solid #666666;
+    line-height: 24px;
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+    width: 25px;
+    height: 25px;
+    top: 0;
+    right: 0;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.tepuy-wf .tepuy-close:hover {
+    background-color: #fbdb9b;
+    color: #666666;
+}
+
+.tepuy-wf-box {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.moodle-dialogue-bd .tepuy-body .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/********************************************************************************/
+/* MORE + MODAL
+/********************************************************************************/
+.eva-more {
+    text-align: right;
+}
+
+.eva-more.eva-more-left {
+    text-align: left;
+    margin-left: 50px;
+    width: 100%;
+}
+
+.eva-more > span {
+    color: #7e858c;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+    padding-right: 20px;
+}
+
+.eva-more > span:before {
+    content: "";
+    font-family: "simple-line-icons";
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    position: absolute;
+    right: 0;
+    top: 2px;
+}
+
+.eva-more > span:hover {
+    color: #63ab22;
+    text-decoration: underline;
+}
+
+.eva-more .modal-body {
+    text-align: left;
+}
+
+.course-content ul.topics li.section .content .eva-generalsection h4.modal-title,
+.course-content ul.topics li.section .content .eva-topicsection h4.modal-title {
+    background: unset;
+    color: #522e90;
+    width: auto;
+    margin: auto;
+}
+
+.modal-header .close {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+/********************************************************************************/
+/* SIZE ADJUSTMENT
+/********************************************************************************/
+@media (max-width:800px) {
+    .eva-topic-description {
+        display: unset;
+    }
+
+    .eva-topic-description .eva-infocategory {
+        width: auto;
+    }
+
+    .eva-phase-name {
+        padding-left: 5px;
+        font-size: 20px;
+    }
+
+}
