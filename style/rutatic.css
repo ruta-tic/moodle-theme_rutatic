@@ -31,6 +31,91 @@
     margin-top: 10px;
 }
 
+/********************************************************************************/
+/* GENERAL SECTION
+*********************************************************************************/
+.eva-generalsection {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.eva-generalsection .eva-infocategory {
+    width: 30%;
+    margin-bottom: 30px;
+}
+
+.eva-generalsection .eva-infocategory .eva-titleicon {
+    font-family: FontAwesome;
+    font-size: 50px;
+    color: #73c8d1;
+    width: 100px;
+    height: 100px;
+    display: block;
+    border: 3px solid #73c8d1;
+    border-radius: 50%; 
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.eva-infocategory .eva-titleicon:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #73c8d1;
+    font-style: normal;
+}
+
+.eva-introduction .eva-titleicon:before {
+    content: "";
+}
+
+.eva-resources .eva-titleicon:before {
+    content: "";
+}
+
+.eva-communication .eva-titleicon:before {
+    content: "";
+}
+
+#page-content #region-main .eva-generalsection .eva-infocategory h2 {
+    font-size: 16px;
+    line-height: 12px;
+    color: #fff !important;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+    padding: 15px 10px;
+    margin-top: 20px;
+    background: url([[pix:theme|bgtitle_1]]) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#page-content #region-main .eva-generalsection.ingenieria .eva-infocategory h2 {
+    background-image: url([[pix:theme|bgtitle_2]]);
+}
+
+#page-content #region-main .eva-generalsection.salud .eva-infocategory h2 {
+    background-image: url([[pix:theme|bgtitle_3]]);
+}
+
+.eva-generalsection .eva-infocategory p {
+    text-align: left;
+}
+
+
+/********************************************************************************/
+/* CONTENT SECTION
+ *********************************************************************************/
 .eva-topic-description {
     display: flex;
     justify-content: space-between;
@@ -67,19 +152,6 @@
 
 .eva-topic-dates p {
     margin: 0;
-}
-
-.eva-infocategory .eva-titleicon:before {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #FFFFFF;
-    font-style: normal;
 }
 
 .eva-generalsection hr,
@@ -334,11 +406,19 @@
     text-transform: uppercase;
     font-weight: 700;
     margin-left: 20px;
-    background: var(--first-bg-url) no-repeat;
+    background: url([[pix:theme|bgtitle_1]]) no-repeat;
     background-size: cover;
     padding: 6px 20px;
-    background-position: center top;
+    background-position: center;
     min-width: 320px;
+}
+
+.eva-topicsection.ingenieria .eva-phase-name {
+    background-image: url([[pix:theme|bgtitle_2]]);
+}
+
+.eva-topicsection.salud .eva-phase-name {
+    background-image: url([[pix:theme|bgtitle_3]]);
 }
 
 .eva-phase-body {
@@ -618,6 +698,15 @@
     #page-course-view-onetopic #section-0 .section .label .contentwithoutlink,
     .path-site li.activity > div, .path-course-view li.activity > div {
         padding: 0;
+    }
+
+    .eva-generalsection .eva-infocategory {
+        width: auto;
+    }
+
+    .eva-generalsection,
+    .eva-mod-description {
+        display: unset;
     }
 
     .eva-topic-description .eva-infocategory {
