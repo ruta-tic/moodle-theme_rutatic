@@ -31,6 +31,10 @@
     margin-top: 10px;
 }
 
+.block_completion_progress .progressBarCell[data-idnumber^="End"] {
+    background-size: contain;
+}
+
 /********************************************************************************/
 /* GENERAL SECTION
 *********************************************************************************/
