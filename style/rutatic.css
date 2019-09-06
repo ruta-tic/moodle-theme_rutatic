@@ -821,30 +821,30 @@
     color: #fff;
 }
 
-#contenido-metodologia > div {
+.contenido-metodologia > div {
     margin-bottom: 20px;
     background-color: #f3f4f6;
     display: flex;
     justify-content: space-between;
 }
 
-#contenido-metodologia > .eva-block-title1,
-#contenido-metodologia > .eva-block-title2 {
+.contenido-metodologia > .eva-block-title1,
+.contenido-metodologia > .eva-block-title2 {
     display: block;
 }
 
-#contenido-metodologia > .eva-block-title2 {
+.contenido-metodologia > .eva-block-title2 {
     background-color: #47657c;
     position: relative;
     margin-bottom: 0;
 }
 
-#contenido-metodologia > .eva-block-title2 img {
+.contenido-metodologia > .eva-block-title2 img {
     position: absolute;
     bottom: 0;
 }
 
-#contenido-metodologia .eva-subtitle {
+.contenido-metodologia .eva-subtitle {
     padding: 15px;
     color: #3a4f5a;
     font-size: 20px;
@@ -854,44 +854,44 @@
     background-color: rgba(243, 244, 246, 0.8);
 }
 
-#contenido-metodologia h5 {
+.contenido-metodologia h5 {
     color: #293a47;
     text-decoration: none;
     margin: 0;
     font-size: 20px;
 }
 
-#contenido-metodologia .eva-special-dates {
+.contenido-metodologia .eva-special-dates {
     margin-left: 10px;
 }
 
-#metodologia-objetivo {
+.metodologia-objetivo {
     height: 170px;
 }
 
-#metodologia-objetivo h5 {
+.metodologia-objetivo h5 {
     margin-bottom: 10px;
 }
 
-#metodologia-objetivo > div:first-child {
+.metodologia-objetivo > div:first-child {
     padding: 20px 0 0 20px;
     width: 50%;
 }
 
-#metodologia-objetivo img {
+.metodologia-objetivo img {
     max-width: 100%;
 }
 
-#metodologia-plantea {
+.metodologia-plantea {
     height: 170px;
 }
 
-#metodologia-plantea img {
+.metodologia-plantea img {
     height: 150px;
     max-width: 200px;
 }
 
-#metodologia-plantea .eva-subtitle {
+.metodologia-plantea .eva-subtitle {
     border-right: 5px solid #fff;
     flex: 0 0 210px;
 }
@@ -918,18 +918,18 @@
     flex-direction: row-reverse;
 }
 
-#metodologia-secciones {
+.metodologia-secciones {
     justify-content: space-between;
     background-color: transparent !important;
 }
 
-#metodologia-secciones > div {
+.metodologia-secciones > div {
     padding: 15px;
     width: 24%;
     background-color: #f3f4f6;
 }
 
-#metodologia-secciones h5 {
+.metodologia-secciones h5 {
     text-align: center;
     font-size: 17px;
     margin-bottom: 20px;
