@@ -57,7 +57,7 @@
     height: 100px;
     display: block;
     border: 3px solid #73c8d1;
-    border-radius: 50%; 
+    border-radius: 50%;
     margin: auto;
     display: flex;
     align-items: center;
@@ -740,4 +740,248 @@
     .eva-topic-description .eva-infocategory:nth-child(2) {
         border-left: none;
     }
+}
+
+
+.eva-block-title1 {
+    background-color: #f3f4f6;
+    color: #1e3642;
+    text-align: center;
+    padding: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.eva-block-title2 {
+    background-color: #47657c;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.toggle-view {
+    display: flex;
+}
+
+.toggle-view > div {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.toggle-view .left {
+    padding-right: 40px;
+}
+
+.toggle-view .right {
+    padding-left: 40px;
+}
+
+.arrow-right,
+.arrow-left {
+    background: #47657c var(--first-bg-url) no-repeat;
+    background-size: cover;
+    width: 30px;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    bottom: 0;
+}
+
+.arrow-right {
+    border-radius: 10px 0 0 10px;
+    left: 0;
+}
+
+.arrow-left {
+    border-radius: 0 10px 10px 0;
+    right: 0;
+}
+
+.arrow-right:before {
+    content: "";
+    font-family: "FontAwesome";
+    position: absolute;
+    font-size: 40px;
+    top: calc(50% - 30px);
+    left: 0;
+    color: #fff;
+}
+
+.arrow-left:before {
+    content: "";
+    font-family: "FontAwesome";
+    position: absolute;
+    font-size: 40px;
+    top: calc(50% - 30px);
+    left: 0;
+    color: #fff;
+}
+
+#contenido-metodologia > div {
+    margin-bottom: 20px;
+    background-color: #f3f4f6;
+    display: flex;
+    justify-content: space-between;
+}
+
+#contenido-metodologia > .eva-block-title1,
+#contenido-metodologia > .eva-block-title2 {
+    display: block;
+}
+
+#contenido-metodologia > .eva-block-title2 {
+    background-color: #47657c;
+    position: relative;
+    margin-bottom: 0;
+}
+
+#contenido-metodologia > .eva-block-title2 img {
+    position: absolute;
+    bottom: 0;
+}
+
+#contenido-metodologia .eva-subtitle {
+    padding: 15px;
+    color: #3a4f5a;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    background-color: rgba(243, 244, 246, 0.8);
+}
+
+#contenido-metodologia h5 {
+    color: #293a47;
+    text-decoration: none;
+    margin: 0;
+    font-size: 20px;
+}
+
+#contenido-metodologia .eva-special-dates {
+    margin-left: 10px;
+}
+
+#metodologia-objetivo {
+    height: 170px;
+}
+
+#metodologia-objetivo h5 {
+    margin-bottom: 10px;
+}
+
+#metodologia-objetivo > div:first-child {
+    padding: 20px 0 0 20px;
+    width: 50%;
+}
+
+#metodologia-objetivo img {
+    max-width: 100%;
+}
+
+#metodologia-plantea {
+    height: 170px;
+}
+
+#metodologia-plantea img {
+    height: 150px;
+    max-width: 200px;
+}
+
+#metodologia-plantea .eva-subtitle {
+    border-right: 5px solid #fff;
+    flex: 0 0 210px;
+}
+
+.metodologia-sliders {
+    display: flex;
+    max-width: 700px;
+}
+
+.metodologia-sliders .slide {
+    position: relative;
+    display: flex;
+    padding: 10px 40px 10px 10px;
+}
+
+.metodologia-sliders .slide p {
+    overflow: auto;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.metodologia-sliders .slide1 {
+    flex-direction: row-reverse;
+}
+
+#metodologia-secciones {
+    justify-content: space-between;
+    background-color: transparent !important;
+}
+
+#metodologia-secciones > div {
+    padding: 15px;
+    width: 24%;
+    background-color: #f3f4f6;
+}
+
+#metodologia-secciones h5 {
+    text-align: center;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+
+.eva-special-dates {
+    background-color: #293a47;
+    display: flex;
+    float: left;
+    color: #fff;
+    text-align: center;
+    font-size: 40px;
+    line-height: 40px;
+    padding: 10px;
+}
+
+.eva-special-dates > div {
+    padding: 0 10px;
+    border-right: 1px solid #fff;
+}
+
+.eva-special-dates > div:last-child {
+    border-right: none;
+    padding-right: 0;
+}
+
+.eva-special-dates label {
+    display: block;
+    font-size: 13px;
+    line-height: 13px;
+}
+
+.tepuy-body {
+    position: absolute;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    top: 45px;
+}
+
+.tepuy-body iframe {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.pagelayout-popup #page {
+    margin: 0;
 }

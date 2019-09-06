@@ -7,6 +7,13 @@
 
     {{>theme_rutatic/generalheaders}}
 
+    <script>
+        M.rutatic = M.rutatic || {};
+
+        {{#globalvars}}
+        M.rutatic.courseid = {{ globalvars.courseid }};
+        {{/globalvars}}
+    </script>
 </head>
 
 <body {{{ bodyattributes }}}>

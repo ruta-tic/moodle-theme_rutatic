@@ -90,6 +90,25 @@ define(['jquery'], function($) {
             });
 
 
+            $('.tepuy-transition').on('click', function(event) {
+                event.preventDefault();
+
+                var $this = $(this);
+                var $show = $($this.attr('data-show'));
+                var $hide = $($this.attr('data-hide'));
+                var transition = $this.attr('data-transition');
+                var duration = $this.attr('data-duration') ? parseInt($this.attr('data-duration')) : 400;
+
+                if (transition) {
+                    $hide.hide(duration, transition, function() {
+                        $show.show(duration, transition);
+                    });
+                } else {
+                    $hide.hide();
+                    $show.show();
+                }
+            });
+
             // ==============================================================================================
             // Float Window
             // ==============================================================================================
@@ -99,12 +118,12 @@ define(['jquery'], function($) {
                 $this.wrapInner("<div class='tepuy-body'></div>");
 
                 var style = '';
-                if ($this.attr('data-tepuy-width')) {
-                    style += 'width:' + $this.attr('data-tepuy-width') + ';';
+                if ($this.attr('data-property-width')) {
+                    style += 'width:' + $this.attr('data-property-width') + ';';
                 }
 
-                if ($this.attr('data-tepuy-height')) {
-                    style += 'height:' + $this.attr('data-tepuy-height') + ';';
+                if ($this.attr('data-property-height')) {
+                    style += 'height:' + $this.attr('data-property-height') + ';';
                 }
 
                 var $close = $('<div class="tepuy-close">X</div>');
@@ -122,10 +141,10 @@ define(['jquery'], function($) {
 
             $('.tepuy-wf-controller').on('click', function(){
                 var $this = $(this);
-                var w = $this.attr('data-tepuy-width');
-                var h = $this.attr('data-tepuy-height');
+                var w = $this.attr('data-property-width');
+                var h = $this.attr('data-property-height');
 
-                var $float_window = $($this.attr('data-tepuy-content'));
+                var $float_window = $($this.attr('data-property-content'));
 
                 if (w) {
                     $float_window.css('width', w);
@@ -144,27 +163,36 @@ define(['jquery'], function($) {
             $('.tepuy-w').each(function() {
                 var $this = $(this);
 
+                if ($this.parents('[data-fieldtype="editor"]') && $this.parents('[data-fieldtype="editor"]').length > 0) {
+                    return;
+                }
+
                 $this.wrapInner("<div class='tepuy-body'></div>");
 
-                var style = '';
-                if ($this.attr('data-tepuy-width')) {
-                    style += 'width:' + $this.attr('data-tepuy-width') + ';';
-                }
+                if ($this.attr('data-tepuy-showentry') || $this.attr('data-tepuy-showconcept')) {
 
-                if ($this.attr('data-tepuy-height')) {
-                    style += 'height:' + $this.attr('data-tepuy-height') + ';';
-                }
+                    var searchparams = {};
 
-                if (style != '') {
-                    $this.attr('style', style);
-                }
+                    if ($this.attr('data-tepuy-showentry')) {
+                        searchparams.eid = $this.attr('data-tepuy-showentry');
+                    } else if ($this.attr('data-tepuy-showconcept') && M.rutatic && M.rutatic.courseid) {
+                        searchparams.concept = $this.attr('data-tepuy-showconcept');
+                        searchparams.courseid = M.rutatic.courseid;
+                    }
 
-                if ($this.attr('data-tepuy-showentry')) {
                     $.get(M.cfg.wwwroot + '/mod/glossary/showentry_ajax.php',
-                            { 'eid': $this.attr('data-tepuy-showentry') },
+                            searchparams,
                             function(data) {
-                                if (data.entries.length > 0) {
-                                    $this.find('.tepuy-body').html(data.entries[0].definition);
+
+                                if (data.entries && Object.keys(data.entries).length > 0) {
+                                    var content = '';
+
+                                    Object.keys(data.entries).forEach(function(item, index) {
+                                        if (data.entries[item].definition) {
+                                            content = data.entries[item].definition;
+                                        }
+                                    });
+                                    $this.find('.tepuy-body').html(content);
                                 }
                     }, 'json');
 
@@ -173,12 +201,27 @@ define(['jquery'], function($) {
                     if ($this.find('a.glossary.autolink').length > 0) {
                         $.get($this.find('a.glossary.autolink').attr('href').replace('showentry.php', 'showentry_ajax.php'),
                                 function(data) {
-                                    if (data.entries.length > 0) {
+                                    if (data.entries && data.entries.length > 0) {
                                         $this.find('.tepuy-body').html(data.entries[0].definition);
                                     }
                         }, 'json');
 
                         $this.attr('title', $this.find('a.glossary.autolink').attr('title'));
+                    }
+                } else if ($this.attr('data-tepuy-innerautolink')) {
+
+                    if ($this.find('a.autolink').length > 0) {
+                        var url = $this.find('a.autolink').attr('href') + '&inpopup=true';
+                        $this.find('a.autolink').hide();
+
+                        var $iframe = $('<iframe></iframe>');
+                        $iframe.attr('src', url);
+                        $iframe.on('load', function() {
+                            $iframe.contents().find('a:not([target])').attr('target', '_top');
+                        });
+
+                        $this.find('.tepuy-body').append($iframe);
+                        $this.attr('title', $this.find('a.autolink').html());
                     }
                 }
 
@@ -190,14 +233,16 @@ define(['jquery'], function($) {
 
                 var $this = $(this);
 
+                if ($this.parents('[data-fieldtype="editor"]') && $this.parents('[data-fieldtype="editor"]').length > 0) {
+                    return;
+                }
+
                 var dialogue = $this.data('dialogue');
 
                 if (!dialogue) {
 
-                    //var maxHeight = $(window).height() - 100;
-
-                    var w = $this.attr('data-tepuy-width');
-                    var h = $this.attr('data-tepuy-height');
+                    var w = $this.attr('data-property-width');
+                    var h = $this.attr('data-property-height');
 
                     var $float_window = $($this.attr('data-tepuy-content') + ' .tepuy-body');
 
@@ -213,20 +258,32 @@ define(['jquery'], function($) {
                     };
 
                     if (w) {
+                        if (w.indexOf('%') >= 0) {
+                            var window_w = $(window).width();
+                            var tmp_w = Number(w.replace('%', ''));
+                            if (!isNaN(tmp_w) && tmp_w > 0) {
+                                w = tmp_w * window_w / 100;
+                            }
+                        }
+
                         properties.width = w;
                     }
 
                     if (h) {
+                        if (h.indexOf('%') >= 0) {
+                            var window_h = $(window).height();
+                            var tmp_h = Number(h.replace('%', ''));
+                            if (!isNaN(tmp_h) && tmp_h > 0) {
+                                h = tmp_h * window_h / 100;
+                            }
+                        }
+
                         properties.height = h;
-                        //maxHeight = maxHeight > h ? h - 100 : maxHeight;
                     }
 
                     var dialogue = new M.core.dialogue(properties);
                     $this.data('dialogue', dialogue);
-
-                    //$('#' + dialogue.get('id') + ' .tepuy-body').css('height', maxHeight);
                 }
-
 
                 dialogue.show();
             });
