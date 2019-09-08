@@ -994,7 +994,7 @@
 
 .eva-sliders {
     display: flex;
-    max-width: 700px;
+    overflow: auto;
 }
 
 .eva-sliders .slide {
