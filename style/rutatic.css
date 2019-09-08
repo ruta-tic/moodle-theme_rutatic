@@ -1122,6 +1122,10 @@
         margin-bottom: 5px;
     }
 
+    .metodologia-sliders .slide {
+        display: unset;
+    }
+
     .contenido-metodologia > .eva-block-title2 {
         padding-right: 95px;
     }
