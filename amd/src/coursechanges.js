@@ -287,6 +287,88 @@ define(['jquery'], function($) {
 
                 dialogue.show();
             });
+
+            // ==============================================================================================
+            // Open resources into modal
+            // ==============================================================================================
+            $('.tepuy-openinmodal').each(function() {
+                var $this = $(this);
+
+                if ($this.parents('[data-fieldtype="editor"]') && $this.parents('[data-fieldtype="editor"]').length > 0) {
+                    return;
+                }
+
+                $this.find('a').each(function(event) {
+                    this.removeAttribute('onclick');
+                });
+
+                $this.find('a').on('click', function(event) {
+                    event.preventDefault();
+
+                    var $link = $(this);
+
+                    var dialogue = $link.data('dialogue');
+
+                    if (!dialogue) {
+
+                        var w = $this.attr('data-property-width');
+                        var h = $this.attr('data-property-height');
+
+                        var url = $link.attr('href') + '&inpopup=true';
+                        var $iframe = $('<iframe class="tepuy-openinmodal-container"></iframe>');
+                        $iframe.attr('src', url);
+                        $iframe.on('load', function() {
+                            $iframe.contents().find('a:not([target])').attr('target', '_top');
+                        });
+
+                        var $float_window = $('<div></div>');
+
+                        $float_window.append($iframe);
+
+                        var properties = {
+                            center: true,
+                            modal: true,
+                            visible: false,
+                            draggable: true,
+                            width: 'auto',
+                            height: 'auto',
+                            autofillheight: 'header',
+                            bodyContent: $float_window
+                        };
+
+                        if (w) {
+                            if (w.indexOf('%') >= 0) {
+                                var window_w = $(window).width();
+                                var tmp_w = Number(w.replace('%', ''));
+                                if (!isNaN(tmp_w) && tmp_w > 0) {
+                                    w = tmp_w * window_w / 100;
+                                }
+                            }
+
+                            properties.width = w;
+                        }
+
+                        if (h) {
+                            if (h.indexOf('%') >= 0) {
+                                var window_h = $(window).height();
+                                var tmp_h = Number(h.replace('%', ''));
+                                if (!isNaN(tmp_h) && tmp_h > 0) {
+                                    h = tmp_h * window_h / 100;
+                                }
+                            }
+
+                            properties.height = h;
+                        }
+
+                        var dialogue = new M.core.dialogue(properties);
+                        $link.data('dialogue', dialogue);
+                    }
+
+                    dialogue.show();
+
+                });
+
+            });
         }
     };
 });

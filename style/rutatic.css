@@ -652,97 +652,6 @@
     top: 5px;
 }
 
-/********************************************************************************/
-/* SIZE ADJUSTMENT
-/********************************************************************************/
-@media (max-width:800px) {
-    .eva-topic-description {
-        display: unset;
-    }
-
-    .eva-topic-description .eva-infocategory {
-        width: auto;
-    }
-
-    .eva-phase-name {
-        padding-left: 5px;
-        font-size: 20px;
-    }
-
-}
-
-@media (max-width:512px) {
-    #page-navbar .breadcrumb-nav .breadcrumb {
-        padding: 0.2em;
-        max-height: 80px;
-        overflow: auto;
-    }
-
-    #page.container-fluid {
-        padding: 1rem 0.2rem 0 0.2rem;
-    }
-
-    #region-main {
-        padding: 0.3rem;
-    }
-
-    #region-main > .card.card-block {
-        padding: 0.3rem;
-    }
-
-    #page-course-view-onetopic #section-0 ul.section {
-        margin: 0;
-        padding: 0;
-    }
-
-    #page-course-view-onetopic #section-0 .section .label .mod-indent-outer {
-        padding: 0;
-    }
-
-    #page-course-view-onetopic #section-0 .section .label .contentwithoutlink,
-    .path-site li.activity > div, .path-course-view li.activity > div {
-        padding: 0;
-    }
-
-    .eva-generalsection .eva-infocategory {
-        width: auto;
-    }
-
-    .eva-generalsection,
-    .eva-mod-description {
-        display: unset;
-    }
-
-    .eva-topic-description .eva-infocategory {
-        padding: 0px;
-    }
-
-    .course-content ul.topics li.section .summary {
-        margin-left: 0;
-    }
-
-    .eva-phase-name {
-        min-width: unset;
-    }
-
-    .eva-topic-details {
-        display: block;
-    }
-
-    .eva-topic-details > div {
-        width: unset;
-    }
-
-    .eva-topic-details > div:nth-child(2) {
-        border-left: none;
-    }
-
-    .eva-topic-description .eva-infocategory:nth-child(2) {
-        border-left: none;
-    }
-}
-
-
 .eva-block-title1 {
     background-color: #f3f4f6;
     color: #1e3642;
@@ -925,8 +834,23 @@
 
 .metodologia-secciones > div {
     padding: 15px;
-    width: 24%;
     background-color: #f3f4f6;
+}
+
+.metodologia-secciones.rx2 > div {
+    width: 46%;
+}
+
+.metodologia-secciones.rx3 > div {
+    width: 32%;
+}
+
+.metodologia-secciones.rx4 > div {
+    width: 22%;
+}
+
+.metodologia-secciones.rx5 > div {
+    width: 18%;
 }
 
 .metodologia-secciones h5 {
@@ -982,6 +906,204 @@
     border: none;
 }
 
+.tepuy-openinmodal-container {
+    position: absolute;
+    top: 45px;
+    bottom: 3px;
+    left: 3px;
+    right: 3px;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
 .pagelayout-popup #page {
     margin: 0;
 }
+
+
+.instructions {
+    display: block !important;
+    font-size: 12px;
+    background-color: transparent !important;
+}
+
+.help-arrow {
+    position: relative;
+    height: 20px;
+    border-radius: 0;
+    width: 17px;
+    display: inline-block;
+    cursor: unset;
+}
+
+.help-arrow:before {
+    font-size: 20px;
+    line-height: 20px;
+    top: 0;
+    left: 0;
+    color: #fff;
+}
+
+.eva-top-icons ul {
+    margin: 0;
+    padding: 0;
+}
+
+.eva-top-icons li {
+    float: left;
+    border: 3px solid #73c8d1;
+    padding: 5px;
+    margin: 0 10px 10px 0;
+    border-radius: 15px;
+    padding-left: 30px;
+    position: relative;
+    list-style: none;
+}
+
+.eva-top-icons li:before {
+    position: absolute;
+    font-family: "FontAwesome";
+    left: 3px;
+    top: 5px;
+    font-size: 20px;
+    line-height: 20px;
+    color: #73c8d1;
+}
+
+.eva-top-icons li.icon-events:before {
+    content: "";
+}
+
+.eva-top-icons li.icon-forum:before {
+    content: "";
+}
+
+.eva-top-icons li.icon-conference:before {
+    content: "";
+}
+
+/********************************************************************************/
+/* SIZE ADJUSTMENT
+ */********************************************************************************/
+ @media (max-width:800px) {
+     .eva-topic-description {
+         display: unset;
+     }
+
+     .eva-topic-description .eva-infocategory {
+         width: auto;
+     }
+
+     .eva-phase-name {
+         padding-left: 5px;
+         font-size: 20px;
+     }
+
+ }
+
+ @media (max-width:512px) {
+     #page-navbar .breadcrumb-nav .breadcrumb {
+        padding: 0.2em;
+        max-height: 80px;
+        overflow: auto;
+     }
+
+     #page.container-fluid {
+        padding: 1rem 0.2rem 0 0.2rem;
+     }
+
+     #region-main {
+        padding: 0.3rem;
+     }
+
+     #region-main > .card.card-block {
+        padding: 0.3rem;
+     }
+
+     #page-course-view-onetopic #section-0 ul.section {
+        margin: 0;
+        padding: 0;
+     }
+
+     #page-course-view-onetopic #section-0 .section .label .mod-indent-outer {
+        padding: 0;
+     }
+
+     #page-course-view-onetopic #section-0 .section .label .contentwithoutlink,
+     .path-site li.activity > div, .path-course-view li.activity > div {
+         padding: 0;
+     }
+
+     .eva-generalsection .eva-infocategory {
+         width: auto;
+     }
+
+     .eva-generalsection,
+     .eva-mod-description {
+         display: unset;
+     }
+
+     .eva-topic-description .eva-infocategory {
+         padding: 0px;
+     }
+
+     .course-content ul.topics li.section .summary {
+         margin-left: 0;
+     }
+
+     .eva-phase-name {
+         min-width: unset;
+     }
+
+     .eva-topic-details {
+         display: block;
+     }
+
+     .eva-topic-details > div {
+         width: unset;
+     }
+
+    .eva-topic-details > div:nth-child(2) {
+         border-left: none;
+    }
+
+    .eva-topic-description .eva-infocategory:nth-child(2) {
+         border-left: none;
+    }
+
+    .contenido-metodologia > div {
+         flex-wrap: wrap;
+    }
+
+    .metodologia-objetivo,
+    .metodologia-plantea {
+        height: unset;
+    }
+
+    .metodologia-plantea .eva-subtitle {
+        border-bottom: 5px solid #fff;
+        flex: 100%;
+    }
+
+    .metodologia-secciones {
+        display: unset !important;
+    }
+
+    .metodologia-secciones.rx2 > div,
+    .metodologia-secciones.rx3 > div,
+    .metodologia-secciones.rx4 > div,
+    .metodologia-secciones.rx5 > div {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .contenido-metodologia > .eva-block-title2 {
+        padding-right: 95px;
+    }
+
+    .contenido-metodologia > .eva-block-title2 img {
+        right: 0;
+    }
+ }
+
