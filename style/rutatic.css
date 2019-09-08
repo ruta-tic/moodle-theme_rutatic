@@ -90,6 +90,10 @@
     content: "";
 }
 
+.eva-activities .eva-titleicon:before {
+    content: "";
+}
+
 #page-content #region-main .eva-generalsection .eva-infocategory h2 {
     font-size: 16px;
     line-height: 12px;
