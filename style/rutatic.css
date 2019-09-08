@@ -992,6 +992,17 @@
     align-items: center;
 }
 
+.eva-sliders {
+    display: flex;
+    max-width: 700px;
+}
+
+.eva-sliders .slide {
+    position: relative;
+    display: flex;
+    padding: 10px 40px;
+}
+
 /********************************************************************************/
 /* SIZE ADJUSTMENT
 *********************************************************************************/
