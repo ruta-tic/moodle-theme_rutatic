@@ -1,4 +1,4 @@
-define(['jquery'], function($) {
+define(['jquery', 'core/modal_factory'], function($, ModalFactory) {
   'use strict';
 
     return {
@@ -321,6 +321,17 @@ define(['jquery'], function($) {
                             $iframe.contents().find('a:not([target])').attr('target', '_top');
                         });
 
+
+                        var el = $.fn['hide'];
+                        $.fn['hide'] = function () {
+                            this.trigger('hide');
+                            return el.apply(this, arguments);
+                        };
+
+                        $iframe.on('hide', function() {
+                            console.log('SE OCULTó');
+                        });
+
                         var $float_window = $('<div></div>');
 
                         $float_window.append($iframe);
@@ -362,6 +373,15 @@ define(['jquery'], function($) {
 
                         var dialogue = new M.core.dialogue(properties);
                         $link.data('dialogue', dialogue);
+                        dialogue.after('visibleChange', function(e) {
+                            if (e.attrName === 'visible') {
+                                if (e.prevVal && !e.newVal) {
+                                    $iframe.contents().find('video, audio').each(function(){
+                                        this.pause();
+                                    });
+                                }
+                            }
+                        }, dialogue);
                     }
 
                     dialogue.show();
@@ -369,6 +389,7 @@ define(['jquery'], function($) {
                 });
 
             });
+
         }
     };
 });
