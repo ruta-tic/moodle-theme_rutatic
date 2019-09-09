@@ -192,7 +192,7 @@ class theme_settings {
                 continue;
             }
 
-            $templatecontext['logos'][$j]['order'] = $theme->setting_file_url($logosorder, $logosorder);
+            $templatecontext['logos'][$j]['order'] = $theme->settings->$logosorder;
 
             if (!empty($theme->settings->$logosimage)) {
                 $templatecontext['logos'][$j]['image'] = $theme->setting_file_url($logosimage, $logosimage);
