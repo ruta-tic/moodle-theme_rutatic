@@ -155,6 +155,12 @@ class theme_settings {
             $j++;
         }
 
+        if (isset($templatecontext['news'])) {
+            usort($templatecontext['news'], function($a, $b) {
+                return ($a['order'] < $b['order']) ? -1 : 1;
+            });
+        }
+
         $templatecontext['hasnews'] = $j;
 
         return $templatecontext;
@@ -202,6 +208,12 @@ class theme_settings {
             }
 
             $j++;
+        }
+
+        if (isset($templatecontext['logos'])) {
+            usort($templatecontext['logos'], function($a, $b) {
+                return ($a['order'] < $b['order']) ? -1 : 1;
+            });
         }
 
         $templatecontext['haslogos'] = $j;
