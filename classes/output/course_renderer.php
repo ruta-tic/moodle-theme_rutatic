@@ -61,19 +61,9 @@ class theme_rutatic_core_course_renderer extends \theme_boost\output\core\course
             $summary = $chelper->get_course_formatted_summary($course,
                     array('overflowdiv' => true, 'noclean' => true, 'para' => false));
 
-            $moreclass = '';
             $uid = 'summary-' . $course->id;
-            if (strlen(strip_tags($summary)) > 300) {
-                $summary = html_writer::start_tag('div', array('class' => 'summary-short', 'id' => $uid . '-short')) . $summary;
-                $summary .= html_writer::end_tag('div');
 
-                $summary .= '<a href="#' . $uid . '" class="show_btn">Ver más...</a>
-                            <a href="#' . $uid . '-short" class="hide_btn">Ver menos...</a> ';
-
-                $moreclass = ' viewmore';
-            }
-
-            $content .= html_writer::start_tag('div', array('class' => 'summary' . $moreclass, 'id' => $uid));
+            $content .= html_writer::start_tag('div', array('class' => 'summary', 'id' => $uid));
 
             $content .= $summary;
 
