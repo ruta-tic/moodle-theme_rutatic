@@ -40,6 +40,6 @@
 </div>
 {{/haschildren}}
 {{^haschildren}}
-<li class="nav-item"><a class="nav-link" href="{{{url}}}" {{#title}}title="{{{title}}}"{{/title}} target="_blank">{{text}}</a></li>
+<li class="nav-item"><a class="nav-link" href="{{{url}}}" {{#title}}title="{{{title}}}"{{/title}} {{#target}}target="{{target}}"{{/target}}>{{text}}</a></li>
 {{/haschildren}}
 {{/divider}}

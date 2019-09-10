@@ -44,6 +44,12 @@ class theme_rutatic_core_renderer extends \theme_boost\output\core_renderer {
         $content = '';
         foreach ($menu->get_children() as $item) {
             $context = $item->export_for_template($this);
+
+            if (strpos($context->text, '*') === 0) {
+                $context->text = ltrim($context->text, '*');
+                $context->target = '_blank';
+            }
+
             $content .= $this->render_from_template('core/custom_menu_item', $context);
         }
 
