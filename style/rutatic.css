@@ -193,6 +193,7 @@
     font-weight: bold;
     position: relative;
     font-size: 15px;
+    line-height: 16px;
 }
 
 .eva-resourcebutton a,
@@ -351,6 +352,19 @@
     opacity: 0.4;
 }
 
+
+.eva-resourcebutton span.unread {
+    position: absolute;
+    left: 0;
+    bottom: 6px;
+    right: 0;
+    font-size: 11px;
+}
+
+.eva-resourcebutton .eva-rb-name span.unread a:before {
+    content: "";
+}
+
 /************************************************************************************/
 /* TOPICS
 /************************************************************************************/
@@ -374,6 +388,10 @@
     color: #000 !important;
     font-weight: normal;
     text-align: left;
+}
+
+#page-content #region-main .eva-topic-description .eva-infocategory video {
+    min-width: 300px;
 }
 
 .eva-topic-description .eva-infocategory h2 strong {
