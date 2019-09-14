@@ -471,6 +471,11 @@
     margin-right: 40px;
 }
 
+.eva-phase-union {
+    border: 3px solid #73c8d1;
+    border-radius: 20px;
+}
+
 .eva-phase-head .fa-plus-circle {
     display: none;
 }
