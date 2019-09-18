@@ -137,7 +137,7 @@ class theme_settings {
                 continue;
             }
 
-            $templatecontext['news'][$j]['order'] = $theme->setting_file_url($newsorder, $newsorder);
+            $templatecontext['news'][$j]['order'] = $theme->settings->$newsorder;
 
             if (!empty($theme->settings->$newsimage)) {
                 $templatecontext['news'][$j]['image'] = $theme->setting_file_url($newsimage, $newsimage);
@@ -247,7 +247,7 @@ class theme_settings {
                 continue;
             }
 
-            $templatecontext['stats'][$j]['order'] = $theme->setting_file_url($statsorder, $statsorder);
+            $templatecontext['stats'][$j]['order'] = $theme->settings->$statsorder;
 
             if (!empty($theme->settings->$statsimage)) {
                 $templatecontext['stats'][$j]['image'] = $theme->setting_file_url($statsimage, $statsimage);
